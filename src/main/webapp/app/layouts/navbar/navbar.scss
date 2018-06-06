@@ -8,7 +8,7 @@ Navbar
 }
 
 .jh-navbar {
-    background-color: #353d47;
+    background-color: #FFFFFF;
     padding: .2em 1em;
     .profile-image {
         margin: -10px 0px;
@@ -24,19 +24,22 @@ Navbar
     }
     ul.navbar-nav {
         padding: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
         .nav-item {
             margin-left: 1.5rem;
         }
     }
     a.nav-link {
         font-weight: 400;
+        color: black;
     }
     .jh-navbar-toggler {
         color: #ccc;
         font-size: 1.5em;
         padding: 10px;
         &:hover {
-            color: #fff;
+            color: #red;
         }
     }
 }
@@ -56,6 +59,7 @@ Navbar
 .navbar-title {
     display: inline-block;
     vertical-align: middle;
+    color: black;
 }
 
 /* ==========================================================================

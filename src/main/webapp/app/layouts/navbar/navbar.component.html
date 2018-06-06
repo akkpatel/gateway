@@ -1,0 +1,35 @@
+<nav class="navbar navbar-dark navbar-expand-md jh-navbar">
+    <div class="jh-logo-container float-left">
+        <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
+            <span class="navbar-title">ATD</span>
+        </a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed">
+            <ul class="navbar-nav">
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
+                        <span>
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <span>Purchase Reports</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
+                        <span>
+                            <i class="fa fa-th-list" aria-hidden="true"></i>
+                            <span>Programs</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
+                        <span>
+                            <i class="fa fa-fw fa-road" aria-hidden="true"></i>
+                            <span>Buisness Info</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+</nav>
