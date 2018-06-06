@@ -1,20 +1,16 @@
-<div>
-  <span>I am in Table component.html</span>
-    <table>
-        <thead>
-            <tr>
-              <th *ngFor="let header of columnHeaders">{{header}}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let tire of tires">
-                <td>{{tire.Brand}}</td>
-                <td>{{tire.Quantity}}</td>
-                <td>{{tire.CurrentSales}}</td>
-                <td>{{tire.PreviousSales}}</td>
-                <td>{{tire.PercentChange}}</td>
-            </tr>
-        </tbody>
-    </table>
-
-</div>
+<table>
+    <thead>
+        <tr>
+          <th *ngFor="let header of columnHeaders">{{header}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tire of tires | async">
+            <td>{{tire.Brand}}</td>
+            <td>{{tire.Quantity}}</td>
+            <td>{{tire.CurrentSales}}</td>
+            <td>{{tire.PreviousSales}}</td>
+            <td>{{tire.PercentChange}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -20,6 +20,7 @@ export class TableComponent implements OnInit {
     this.columnHeaders = this.tiresTableService.getTableHeaders();
 
     this.tires = this.tiresTableService.getTires();
+    console.log(this.tires);
   }
 
 }

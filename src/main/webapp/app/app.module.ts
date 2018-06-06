@@ -25,6 +25,8 @@ import {
     ErrorComponent
 } from './layouts';
 
+import { TiresTableService } from './tires-table.service';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -45,6 +47,7 @@ import {
     providers: [
         ProfileService,
         PaginationConfig,
+        TiresTableService,
         UserRouteAccessService,
         {
             provide: HTTP_INTERCEPTORS,
