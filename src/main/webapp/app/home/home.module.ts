@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { GatewaySharedModule } from '../shared';
 
 import { HOME_ROUTE, HomeComponent } from './';
+// import { TableComponent } from '../table/table.component';
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import { HOME_ROUTE, HomeComponent } from './';
     ],
     declarations: [
         HomeComponent,
+        // TableComponent
     ],
     entryComponents: [
     ],

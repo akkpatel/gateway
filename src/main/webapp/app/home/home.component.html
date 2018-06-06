@@ -1,4 +1,23 @@
 <div class="row">
+    <jhi-table></jhi-table>
+    <table>
+        <thead>
+            <th>Brand</th>
+            <th>Quantity</th>
+            <th>Current Sales</th>
+            <th>Previous Sales</th>
+            <th>% Change</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tire of tires">
+                <td>{{tire.Brand}}</td>
+                <td>{{tire.Quantity}}</td>
+                <td>{{tire.CurrentSales}}</td>
+                <td>{{tire.PreviousSales}}</td>
+                <td>{{tire.PercentChange}}</td>
+            </tr>
+        </tbody>
+    </table>
 <!--     <div class="col-md-3">
         <span class="hipster img-fluid rounded"></span>
     </div>

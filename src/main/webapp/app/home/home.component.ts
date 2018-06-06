@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
+import { HttpClient } from '@angular/common/http';
 
 import { Account, LoginModalService, Principal } from '../shared';
+import { TableComponent } from '../table/table.component';
 
 @Component({
     selector: 'jhi-home',
@@ -15,11 +17,14 @@ import { Account, LoginModalService, Principal } from '../shared';
 export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
+    tiresJSON = require('../assets/tires.json');
+    tires: Array<Object> = [];
 
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
-        private eventManager: JhiEventManager
+        private eventManager: JhiEventManager,
+        private httpService: HttpClient
     ) {
     }
 
@@ -28,6 +33,10 @@ export class HomeComponent implements OnInit {
             this.account = account;
         });
         this.registerAuthenticationSuccess();
+        this.tires = this.tiresJSON;
+        // this.httpService.get(this.tiresUrl).subscribe(data => {
+        //     console.log(data);
+        // });
     }
 
     registerAuthenticationSuccess() {

@@ -23,7 +23,7 @@ import {
     ],
     declarations: [
         JhiLoginModalComponent,
-        HasAnyAuthorityDirective
+        HasAnyAuthorityDirective,
     ],
     providers: [
         LoginService,
