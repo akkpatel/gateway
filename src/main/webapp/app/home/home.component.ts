@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 
 import { Account, LoginModalService, Principal } from '../shared';
-import { TableComponent } from '../table/table.component';
 
 @Component({
     selector: 'jhi-home',
@@ -24,7 +23,7 @@ export class HomeComponent implements OnInit {
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
-        private httpService: HttpClient
+        // private httpService: HttpClient
     ) {
     }
 
