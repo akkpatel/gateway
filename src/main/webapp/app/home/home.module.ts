@@ -6,15 +6,24 @@ import { SkuService } from '../sku/sku.service';
 
 import { HOME_ROUTE, HomeComponent } from './';
 import { TableComponent } from '../table/table.component';
+import { ButtonComponent } from '../atoms/button/button.component';
+import { NavlinkComponent } from '../molecules/navlink/navlink.component';
+import { AnchorComponent } from '../atoms/anchor/anchor.component';
 
 @NgModule({
     imports: [
         GatewaySharedModule,
         RouterModule.forChild([ HOME_ROUTE ])
     ],
+    exports: [
+        NavlinkComponent
+    ],
     declarations: [
         HomeComponent,
-        TableComponent
+        TableComponent,
+        ButtonComponent,
+        NavlinkComponent,
+        AnchorComponent
     ],
     entryComponents: [
     ],

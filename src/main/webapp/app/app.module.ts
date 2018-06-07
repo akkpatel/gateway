@@ -1,6 +1,7 @@
 import './vendor.ts';
 
 import { NgModule, Injector } from '@angular/core';
+import { ClarityModule } from "@clr/angular";
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
@@ -18,18 +19,24 @@ import { PaginationConfig } from './blocks/config/uib-pagination.config';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
-    NavbarComponent,
     FooterComponent,
     ProfileService,
     PageRibbonComponent,
+    NavbarComponent,
     ErrorComponent
 } from './layouts';
 
 import { TiresTableService } from './tires-table.service';
+// import { ButtonComponent } from './atoms/button/button.component';
+import { H1Component } from './atoms/h1/h1.component';
+import { ImgComponent } from './atoms/img/img.component';
+import { MainNavbarComponent } from './organisms/navbar/navbar.component';
+
 
 @NgModule({
     imports: [
         BrowserModule,
+        ClarityModule,
         GatewayAppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
         GatewaySharedModule,
@@ -39,10 +46,14 @@ import { TiresTableService } from './tires-table.service';
     ],
     declarations: [
         JhiMainComponent,
+        MainNavbarComponent,
         NavbarComponent,
         ErrorComponent,
         PageRibbonComponent,
-        FooterComponent
+        FooterComponent,
+        // ButtonComponent,
+        H1Component,
+        ImgComponent
     ],
     providers: [
         ProfileService,
