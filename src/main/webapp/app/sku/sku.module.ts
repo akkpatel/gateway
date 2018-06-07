@@ -2,25 +2,24 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { GatewaySharedModule } from '../shared';
-import { SkuService } from '../sku/sku.service';
+import {
+    SkuService,
+} from './';
 
-import { HOME_ROUTE, HomeComponent } from './';
-import { TableComponent } from '../table/table.component';
+const ENTITY_STATES = [
+];
 
 @NgModule({
     imports: [
         GatewaySharedModule,
-        RouterModule.forChild([ HOME_ROUTE ])
     ],
     declarations: [
-        HomeComponent,
-        TableComponent
     ],
     entryComponents: [
     ],
     providers: [
-    SkuService
+        SkuService,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class GatewayHomeModule {}
+export class GatewaySkuModule {}

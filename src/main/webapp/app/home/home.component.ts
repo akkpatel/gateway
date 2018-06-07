@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 // import { HttpClient } from '@angular/common/http';
-
+import { SkuService } from '../sku/sku.service';
+import { Sku } from '../sku/sku.model';
+import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Account, LoginModalService, Principal } from '../shared';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
     selector: 'jhi-home',
@@ -14,6 +18,10 @@ import { Account, LoginModalService, Principal } from '../shared';
 
 })
 export class HomeComponent implements OnInit {
+    skus: Sku[];
+    sku: Sku;
+    isSaving: boolean;
+
     account: Account;
     modalRef: NgbModalRef;
     tiresJSON = require('../assets/tires.json');
@@ -23,6 +31,7 @@ export class HomeComponent implements OnInit {
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
+        private skuService: SkuService,
         // private httpService: HttpClient
     ) {
     }
@@ -36,6 +45,15 @@ export class HomeComponent implements OnInit {
         // this.httpService.get(this.tiresUrl).subscribe(data => {
         //     console.log(data);
         // });
+        this.sku = {
+            name: "Bridgestone",
+            quantity: 984,
+            currentSales: 120042,
+            previousSales: 111768,
+            percentChange: 7
+        }
+        //this.save();
+        this.loadAll();
     }
 
     registerAuthenticationSuccess() {
@@ -44,6 +62,43 @@ export class HomeComponent implements OnInit {
                 this.account = account;
             });
         });
+    }
+
+    loadAll() {
+        this.skuService.query().subscribe(
+            (res: HttpResponse<Sku[]>) => {
+                console.log('lets check the res: ', res);
+                this.skus = res.body;
+            }
+        );
+    }
+
+    save() {
+        console.log('we are in save');
+        this.isSaving = true;
+        if (this.sku.id !== undefined) {
+        console.log('we are in if');
+            this.subscribeToSaveResponse(
+                this.skuService.update(this.sku));
+        } else {
+        console.log('we are in else');
+            this.subscribeToSaveResponse(
+                this.skuService.create(this.sku));
+        }
+    }
+
+    private subscribeToSaveResponse(result: Observable<HttpResponse<Sku>>) {
+        result.subscribe((res: HttpResponse<Sku>) =>
+            this.onSaveSuccess(res.body), (res: HttpErrorResponse) => this.onSaveError());
+    }
+
+    private onSaveSuccess(result: Sku) {
+        this.eventManager.broadcast({ name: 'skuListModification', content: 'OK'});
+        this.isSaving = false;
+    }
+
+    private onSaveError() {
+        this.isSaving = false;
     }
 
     isAuthenticated() {
