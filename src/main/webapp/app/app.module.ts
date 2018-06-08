@@ -1,7 +1,7 @@
 import './vendor.ts';
 
 import { NgModule, Injector } from '@angular/core';
-import { ClarityModule } from "@clr/angular";
+import { ClarityModule } from '@clr/angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
@@ -36,7 +36,7 @@ import { MainNavbarComponent } from './organisms/navbar/navbar.component';
 @NgModule({
     imports: [
         BrowserModule,
-        ClarityModule,
+        ClarityModule.forRoot(),
         GatewayAppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
         GatewaySharedModule,

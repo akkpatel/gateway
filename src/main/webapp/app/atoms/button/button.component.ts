@@ -7,11 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() name: string;
-  buttonText:string;
+  buttonText: string;
 
   constructor() { }
 
-  ngOnInit() { 
+  ngOnInit() {
     console.log('TEST', this.name);
   }
 

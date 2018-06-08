@@ -10,7 +10,6 @@ export class MainNavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("In Navbar");
   }
 
 }

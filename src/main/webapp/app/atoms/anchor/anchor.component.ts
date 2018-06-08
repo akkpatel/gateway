@@ -10,7 +10,6 @@ export class AnchorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("Anchor Text: ", this.text)
   }
 
 }

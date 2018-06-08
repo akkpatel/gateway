@@ -11,7 +11,6 @@ export class NavlinkComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("Navlink Text: ", this.navlinkText)
   }
 
 }

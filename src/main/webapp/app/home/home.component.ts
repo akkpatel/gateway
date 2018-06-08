@@ -8,7 +8,6 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Account, LoginModalService, Principal } from '../shared';
 import { Observable } from 'rxjs/Observable';
 
-
 @Component({
     selector: 'jhi-home',
     templateUrl: './home.component.html',
@@ -46,13 +45,13 @@ export class HomeComponent implements OnInit {
         //     console.log(data);
         // });
         this.sku = {
-            name: "Bridgestone",
+            name: 'Bridgestone',
             quantity: 984,
             currentSales: 120042,
             previousSales: 111768,
             percentChange: 7
-        }
-        //this.save();
+        };
+        // this.save();
         this.loadAll();
     }
 

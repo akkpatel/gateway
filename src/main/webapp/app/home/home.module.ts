@@ -1,5 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ClarityModule } from '@clr/angular';
 
 import { GatewaySharedModule } from '../shared';
 import { SkuService } from '../sku/sku.service';
@@ -13,6 +14,7 @@ import { AnchorComponent } from '../atoms/anchor/anchor.component';
 @NgModule({
     imports: [
         GatewaySharedModule,
+        ClarityModule.forRoot(),
         RouterModule.forChild([ HOME_ROUTE ])
     ],
     exports: [

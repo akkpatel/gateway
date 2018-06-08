@@ -23,7 +23,8 @@
             "styles": [
               "src/main/webapp/content/scss/vendor.scss",
               "src/main/webapp/content/scss/global.scss",
-              "../node_modules/@clr/ui/clr-ui.min.css"
+              "../node_modules/@clr/ui/clr-ui.min.css",
+              "../node_modules/@clr/icons/clr-icons.min.css"
             ],
             "scripts": [
               "../node_modules/@webcomponents/custom-elements/custom-elements.min.js",
