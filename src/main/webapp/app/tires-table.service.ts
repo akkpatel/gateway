@@ -13,7 +13,12 @@ export class TiresTableService {
     return Observable.of(TIRES);
   }
 
-  getTableHeaders(): string[] {
-    return ['Brand', 'Quantity', 'Current Sales', 'Previous Sales', '% Change'];
+  getTableHeaders(value: boolean): string[] {
+  	if(value)
+  	{
+		return ['Brand', 'Quantity', 'Current Sales', 'Previous Sales', '% Change'];
+  	}else{
+		return ['ID', 'Brand', 'Quantity', 'Current Sales', 'Previous Sales', '% Change'];  	
+  	}
   }
 }

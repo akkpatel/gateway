@@ -13,6 +13,7 @@ import { Sku } from '../sku/sku.model';
 export class TableComponent implements OnInit {
   @Input() tableData: Observable<any[]>;
   @Input() mockTableData: Sku[];
+  value = null;
 
   tires: Observable<any[]>;
   columnHeaders: string[];
@@ -22,7 +23,13 @@ export class TableComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.columnHeaders = this.tiresTableService.getTableHeaders();
+    if(this.tableData)
+    {
+      this.value = true;
+    }else{
+      this.value = false
+    }
+    this.columnHeaders = this.tiresTableService.getTableHeaders(this.value);
   }
 
 }
