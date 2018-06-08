@@ -39,6 +39,7 @@ export class SkuService {
     }
 
     delete(id: number): Observable<HttpResponse<any>> {
+    console.log('we are deleting');
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response'});
     }
 

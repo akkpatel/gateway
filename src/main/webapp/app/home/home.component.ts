@@ -7,6 +7,7 @@ import { Sku } from '../sku/sku.model';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Account, LoginModalService, Principal } from '../shared';
 import { Observable } from 'rxjs/Observable';
+import { TiresTableService } from '../tires-table.service';
 
 
 @Component({
@@ -25,18 +26,20 @@ export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
     tiresJSON = require('../assets/tires.json');
-    tires: Array<Object> = [];
+    tires: Observable<any[]>;
 
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
         private skuService: SkuService,
+        private tiresTableService: TiresTableService
         // private httpService: HttpClient
     ) {
     }
 
     ngOnInit() {
+    console.log('lets check the sku: ', this.sku);
         this.principal.identity().then((account) => {
             this.account = account;
         });
@@ -46,13 +49,15 @@ export class HomeComponent implements OnInit {
         //     console.log(data);
         // });
         this.sku = {
-            name: "Bridgestone",
-            quantity: 984,
-            currentSales: 120042,
-            previousSales: 111768,
-            percentChange: 7
+            name: "",
+            quantity: 0,
+            currentSales: 0,
+            previousSales: 0,
+            percentChange: 0
         }
         //this.save();
+        this.tires = this.tiresTableService.getTires();
+        console.log('check the tires: ', this.tires);
         this.loadAll();
     }
 
