@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TiresTableService } from '../tires-table.service';
 import { Observable } from 'rxjs/Observable';
+import { Sku } from '../sku/sku.model';
 
 @Component({
   selector: 'jhi-table',
   templateUrl: './table.component.html',
-  styles: []
+  styles: [
+    'table.scss'
+  ]
 })
 export class TableComponent implements OnInit {
+  @Input() tableData: Observable<any[]>;
+  @Input() mockTableData: Sku[];
+
   tires: Observable<any[]>;
   columnHeaders: string[];
 
@@ -16,11 +22,7 @@ export class TableComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('we got called here');
     this.columnHeaders = this.tiresTableService.getTableHeaders();
-
-    this.tires = this.tiresTableService.getTires();
-    console.log(this.tires);
   }
 
 }

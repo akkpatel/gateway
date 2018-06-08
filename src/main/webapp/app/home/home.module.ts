@@ -10,6 +10,7 @@ import { TableComponent } from '../table/table.component';
 import { ButtonComponent } from '../atoms/button/button.component';
 import { NavlinkComponent } from '../molecules/navlink/navlink.component';
 import { AnchorComponent } from '../atoms/anchor/anchor.component';
+import { AddSkuComponent } from '../sku/addSku.component';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import { AnchorComponent } from '../atoms/anchor/anchor.component';
         TableComponent,
         ButtonComponent,
         NavlinkComponent,
-        AnchorComponent
+        AnchorComponent,
+        AddSkuComponent
     ],
     entryComponents: [
     ],

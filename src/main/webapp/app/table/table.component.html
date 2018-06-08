@@ -1,16 +1,26 @@
-<table>
-    <thead>
-        <tr>
-          <th *ngFor="let header of columnHeaders">{{header}}</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let tire of tires | async">
-            <td>{{tire.Brand}}</td>
-            <td>{{tire.Quantity}}</td>
-            <td>{{tire.CurrentSales}}</td>
-            <td>{{tire.PreviousSales}}</td>
-            <td>{{tire.PercentChange}}</td>
-        </tr>
-    </tbody>
-</table>
+
+    <table>
+        <thead>
+            <tr>
+              <th *ngFor="let header of columnHeaders">{{header}}</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="tableData">
+            <tr *ngFor="let tire of tableData | async">
+                <td>{{tire.Brand}}</td>
+                <td>{{tire.Quantity}}</td>
+                <td>{{tire.CurrentSales}}</td>
+                <td>{{tire.PreviousSales}}</td>
+                <td>{{tire.PercentChange}}</td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="mockTableData">
+            <tr *ngFor="let tire of mockTableData">
+                <td>{{tire.name}}</td>
+                <td>{{tire.quantity}}</td>
+                <td>{{tire.currentSales}}</td>
+                <td>{{tire.previousSales}}</td>
+                <td>{{tire.percentChange}}</td>
+            </tr>
+        </tbody>
+    </table>
