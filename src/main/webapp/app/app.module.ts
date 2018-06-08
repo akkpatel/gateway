@@ -28,9 +28,9 @@ import {
 
 import { TiresTableService } from './tires-table.service';
 // import { ButtonComponent } from './atoms/button/button.component';
-import { H1Component } from './atoms/h1/h1.component';
-import { ImgComponent } from './atoms/img/img.component';
-import { MainNavbarComponent } from './organisms/navbar/navbar.component';
+import { H1Component } from './components/atoms/h1/h1.component';
+import { ImgComponent } from './components/atoms/img/img.component';
+import { MainNavbarComponent } from './components/organisms/navbar/navbar.component';
 
 
 @NgModule({
