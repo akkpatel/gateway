@@ -48,15 +48,6 @@ export class HomeComponent implements OnInit {
         //     console.log(data);
         // });
         this.sku = {
-<<<<<<< HEAD
-            name: 'Bridgestone',
-            quantity: 984,
-            currentSales: 120042,
-            previousSales: 111768,
-            percentChange: 7
-        };
-        // this.save();
-=======
             name: "",
             quantity: 0,
             currentSales: 0,
@@ -66,7 +57,6 @@ export class HomeComponent implements OnInit {
         //this.save();
         this.tires = this.tiresTableService.getTires();
         console.log('check the tires: ', this.tires);
->>>>>>> 6cea40e892104382a1460c14d3ac3e084fba34e9
         this.loadAll();
     }
 
