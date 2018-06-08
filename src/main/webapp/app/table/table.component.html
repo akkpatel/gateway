@@ -16,6 +16,7 @@
         </tbody>
         <tbody *ngIf="mockTableData">
             <tr *ngFor="let tire of mockTableData">
+                <td>{{tire.id}}</td>
                 <td>{{tire.name}}</td>
                 <td>{{tire.quantity}}</td>
                 <td>{{tire.currentSales}}</td>

@@ -1,5 +1,5 @@
 <form name="editForm" role="form" novalidate #editForm="ngForm">
-    <div class="row">
+    <div class="row" style="padding-left: 16px;">
         <div class="form-group" >
             <label for="name">Brand</label>
             <input type="text" class="form-control" id="name" name="name"
@@ -26,11 +26,23 @@
                 [(ngModel)]="sku.percentChange" />
         </div>
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer" style="border-bottom:1px solid #e9ecef; border-top:none">
     	<button type="submit"
             (click)="save()"
             class="btn btn-primary">
 			<span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+    <div class="form-group" style="width: 175px;">
+        <label class="form-control-label" for="field_price">Id</label>
+        <input type="number" class="form-control" name="percentChange" id="field_price"
+                [(ngModel)]="id" />
+    </div>
+    <div class="modal-footer" style="border-bottom:1px solid #e9ecef; border-top:none">
+        <button type="submit"
+            (click)="confirmDelete()"
+            class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Delete Row</span>
         </button>
     </div>
 </form>

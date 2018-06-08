@@ -15,6 +15,7 @@ import { JhiEventManager } from 'ng-jhipster';
 export class AddSkuComponent implements OnInit {
   @Input() sku: Sku;
   isSaving: boolean;
+  id: null;
 
   constructor(
     private skuService: SkuService,
@@ -23,16 +24,15 @@ export class AddSkuComponent implements OnInit {
 
   ngOnInit() {
     this.isSaving = false;
-    console.log('check the sku: ', this.sku);
   }
-  confirmDelete(id: number) {
-      this.skuService.delete(id).subscribe((response) => {
-          this.eventManager.broadcast({
-              name: 'skuListModification',
-              content: 'Deleted an sku'
-          });
-      });
-    }
+  confirmDelete() {
+    this.skuService.delete(this.id).subscribe((response) => {
+        this.eventManager.broadcast({
+            name: 'skuListModification',
+            content: 'Deleted an sku'
+        });
+    });
+  }
   save() {
         console.log('we are in save: ', this.sku);
         this.isSaving = true;
