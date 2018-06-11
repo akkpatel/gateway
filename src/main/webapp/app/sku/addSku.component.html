@@ -1,26 +1,26 @@
 <form name="editForm" role="form" novalidate #editForm="ngForm">
-    <div class="row" style="padding-left: 16px;">
-        <div class="form-group" >
+    <div class="row">
+        <div class="form-group col-xs-2" >
             <label for="name">Brand</label>
             <input type="text" class="form-control" id="name" name="name"
                    [(ngModel)]="sku.name"/>
         </div>
-        <div class="form-group">
+        <div class="form-group col-xs-2">
             <label class="form-control-label" for="field_model">Quantity</label>
             <input type="number" class="form-control" name="quantity" id="field_model"
                 [(ngModel)]="sku.quantity" />
         </div>
-        <div class="form-group">
+        <div class="form-group col-xs-2">
             <label class="form-control-label" for="field_price">CurrentSales</label>
             <input type="number" class="form-control" name="currentSales" id="field_price"
                 [(ngModel)]="sku.currentSales" />
         </div>
-        <div class="form-group">
+        <div class="form-group col-xs-2">
             <label class="form-control-label" for="field_price">PreviousSales</label>
             <input type="number" class="form-control" name="previousSales" id="field_price"
                 [(ngModel)]="sku.previousSales" />
         </div>
-        <div class="form-group">
+        <div class="form-group col-xs-2">
             <label class="form-control-label" for="field_price">% Change</label>
             <input type="number" class="form-control" name="percentChange" id="field_price"
                 [(ngModel)]="sku.percentChange" />
