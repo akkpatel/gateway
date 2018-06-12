@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'jhi-h1',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class H1Component implements OnInit {
-
+  @Input() text: string;
   constructor() { }
 
   ngOnInit() {
