@@ -31,6 +31,7 @@ import { TiresTableService } from './tires-table.service';
 import { H1Component } from './components/atoms/h1/h1.component';
 import { ImgComponent } from './components/atoms/img/img.component';
 import { MainNavbarComponent } from './components/organisms/navbar/navbar.component';
+import { PurchasereportModule } from './purchasereport/purchasereport.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { MainNavbarComponent } from './components/organisms/navbar/navbar.compon
         BrowserModule,
         ClarityModule.forRoot(),
         GatewayAppRoutingModule,
+        PurchasereportModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
         GatewaySharedModule,
         GatewayHomeModule,

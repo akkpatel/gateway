@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
         //this.save();
         this.tires = this.tiresTableService.getTires();
         console.log('check the tires: ', this.tires);
-        this.loadAll();
+        // this.loadAll();
     }
 
     registerAuthenticationSuccess() {
