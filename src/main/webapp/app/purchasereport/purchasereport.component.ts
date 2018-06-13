@@ -26,7 +26,7 @@ export class PurchasereportComponent implements OnInit {
     }
 
     getPurchaseReportData() {
-      this.skuService.sample().subscribe(
+        this.skuService.sample().subscribe(
             (res: HttpResponse<Sku[]>) => {
                 console.log('lets check the res: ', res);
                 this.purchaseReportData =  res.body;
