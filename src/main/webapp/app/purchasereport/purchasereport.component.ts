@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SkuService } from '../sku/sku.service';
-import { Sku } from '../sku/sku.model';
-import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
