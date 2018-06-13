@@ -1,1 +1,17 @@
-<h1>Year to Date Revenue: {{purchaseReportArray[0].sales.yearToDate}}</h1>
+<div class="pp-tiresales">
+  <h1 class="pp-tiresalesheader">YTD Tire Sales</h1>
+  <div class="pp-tiresalesdata">
+    <div class="pp-tiresalesdatablock">
+        <h2>YTD Revenue</h2>
+        <p class="pp-ytdsales">{{purchaseReportArray[0].sales.yearToDate}}</p>
+    </div>
+    <div class="pp-tiresalesdatablock">
+        <h2>Previous YTD Revenue</h2>
+        <p class="pp-ytdsales">{{purchaseReportArray[0].sales.previousYearToDate}}</p>
+    </div>
+    <div class="pp-tiresalesdatablock">
+        <h2>Change</h2>
+        <p class="pp-change">{{purchaseReportArray[0].sales.change}}</p>
+    </div>
+  </div>
+</div>

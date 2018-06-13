@@ -4,10 +4,12 @@ import { purchaseReportData } from '../purchaseReport';
 @Component({
   selector: 'jhi-purchasereport',
   templateUrl: './purchasereport.component.html',
-  styles: []
+  styles: [
+      'purchasereport.scss'
+  ]
 })
 export class PurchasereportComponent implements OnInit {
-    purchaseReportArray:Array<any> = [];
+    purchaseReportArray:Array<Object> = [];
     constructor() {}
 
     ngOnInit() {
@@ -16,7 +18,6 @@ export class PurchasereportComponent implements OnInit {
     }
 
     getPurchaseReportData() {
-        console.log(purchaseReportData);
         return purchaseReportData;
     }
 }
