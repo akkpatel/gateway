@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SkuService } from '../sku/sku.service';
 import { Sku } from '../sku/sku.model';
 import { HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'jhi-purchasereport',
@@ -12,7 +13,8 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class PurchasereportComponent implements OnInit {
     purchaseReportArray: Array<any> = [];
-    purchaseReportData = null;
+    purchaseReportData: Observable<any[]>;
+
     constructor(
       private skuService: SkuService,
     ) {}
@@ -23,7 +25,7 @@ export class PurchasereportComponent implements OnInit {
 
     getPurchaseReportData() {
       this.skuService.sample().subscribe(
-            (res: HttpResponse<Sku[]>) => {
+            (res) => {
                 console.log('lets check the res: ', res);
                 this.purchaseReportData =  res.body;
             }
