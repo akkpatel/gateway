@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
         this.tires = this.tiresTableService.getTires();
         console.log('check the tires: ', this.tires);
         // this.loadAll();
+        this.loadSample();
     }
 
     registerAuthenticationSuccess() {
@@ -73,6 +74,16 @@ export class HomeComponent implements OnInit {
             (res: HttpResponse<Sku[]>) => {
                 console.log('lets check the res: ', res);
                 this.skus = res.body;
+            }
+        );
+    }
+
+    loadSample() {
+        console.log('we are in sample');
+        this.skuService.sample().subscribe(
+            (res: HttpResponse<Sku[]>) => {
+                console.log('lets check the res: ', res);
+                
             }
         );
     }

@@ -38,6 +38,12 @@ export class SkuService {
             .map((res: HttpResponse<Sku[]>) => this.convertArrayResponse(res));
     }
 
+    sample(req?: any): Observable<HttpResponse<Sku[]>> {
+        console.log('we are in sample')
+        return this.http.get<Sku[]>(`${this.resourceUrl}/sample`, { observe: 'response'})
+            .map((res: HttpResponse<Sku[]>) => res);
+    }
+
     delete(id: number): Observable<HttpResponse<any>> {
     console.log('we are deleting');
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response'});
