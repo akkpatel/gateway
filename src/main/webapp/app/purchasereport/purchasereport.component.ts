@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class PurchasereportComponent implements OnInit {
     purchaseReportData: Observable<any[]>;
-    testHelloWorldValue: string = "Hello World";
+    testHelloWorldValue = 'Hello World';
 
     constructor(
       private skuService: SkuService
@@ -19,9 +19,11 @@ export class PurchasereportComponent implements OnInit {
 
     ngOnInit() {
         this.getPurchaseReportData();
+        console.log('Ran Test');
     }
 
     getPurchaseReportData() {
+        console.log('we are testing this function');
       this.skuService.sample().subscribe(
             (res) => {
                 console.log('lets check the res: ', res);
@@ -31,6 +33,6 @@ export class PurchasereportComponent implements OnInit {
     }
 
     testHelloWorld() {
-        this.testHelloWorldValue = "Hello New World";
+        this.testHelloWorldValue = 'Hello New World';
     }
 }
