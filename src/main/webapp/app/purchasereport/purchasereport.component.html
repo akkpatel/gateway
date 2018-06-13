@@ -3,7 +3,7 @@
   <div class="pp-tiresalesdata">
     <div class="pp-tiresalesdatablock">
         <h2>YTD Revenue</h2>
-        <p class="pp-ytdsales">{{purchaseReportData.sales.yearToDate}}</p>
+        <p *ngIf="(purchaseReportData | async)" class="pp-ytdsales">{{purchaseReportData.sales.yearToDate}}</p>
     </div>
     <div class="pp-tiresalesdatablock">
         <h2>Previous YTD Revenue</h2>
