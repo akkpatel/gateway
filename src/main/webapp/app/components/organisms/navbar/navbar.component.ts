@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'jhi-mainNavbar',
+  selector: 'jhi-main-navbar',
   templateUrl: './navbar.component.html',
   styles: ['navbar.scss']
 })

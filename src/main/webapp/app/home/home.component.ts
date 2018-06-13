@@ -48,13 +48,13 @@ export class HomeComponent implements OnInit {
         //     console.log(data);
         // });
         this.sku = {
-            name: "",
+            name: '',
             quantity: 0,
             currentSales: 0,
             previousSales: 0,
             percentChange: 0
-        }
-        //this.save();
+        };
+        // this.save();
         this.tires = this.tiresTableService.getTires();
         console.log('check the tires: ', this.tires);
         // this.loadAll();
@@ -83,7 +83,6 @@ export class HomeComponent implements OnInit {
         this.skuService.sample().subscribe(
             (res: HttpResponse<Sku[]>) => {
                 console.log('lets check the res: ', res);
-                
             }
         );
     }

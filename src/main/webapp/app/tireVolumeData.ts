@@ -1,4 +1,4 @@
-export interface brandData {
+export interface BrandData {
     invoiceId: number;
     shipCustomerId: number;
     billCustomerId: number;
