@@ -3,15 +3,15 @@
   <div class="pp-tiresalesdata">
     <div class="pp-tiresalesdatablock">
         <h2>YTD Revenue</h2>
-        <p *ngIf="(purchaseReportData | async)" class="pp-ytdsales">{{purchaseReportData.sales.yearToDate}}</p>
+        <p class="pp-ytdsales" *ngIf="purchaseReportData">{{purchaseReportData.sales.yearToDate}}</p>
     </div>
     <div class="pp-tiresalesdatablock">
         <h2>Previous YTD Revenue</h2>
-        <p class="pp-ytdsales">{{purchaseReportData.sales.previousYearToDate}}</p>
+        <p class="pp-ytdsales" *ngIf="purchaseReportData">{{purchaseReportData.sales.previousYearToDate}}</p>
     </div>
     <div class="pp-tiresalesdatablock">
         <h2>Change</h2>
-        <p class="pp-change">{{purchaseReportData.sales.change}}</p>
+        <p class="pp-change" *ngIf="purchaseReportData">{{purchaseReportData.sales.change}}</p>
     </div>
   </div>
 </div>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SkuService } from '../sku/sku.service';
 import { Sku } from '../sku/sku.model';
 import { HttpResponse } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -13,9 +12,7 @@ import { Observable } from 'rxjs/Observable';
   ]
 })
 export class PurchasereportComponent implements OnInit {
-    purchaseReportArray: Array<any> = [];
-    purchaseReportData = null;
-    purchaseReportObservableArray: Observable<any>;
+    purchaseReportData: Observable<any[]>;
 
     constructor(
       private skuService: SkuService
@@ -26,15 +23,11 @@ export class PurchasereportComponent implements OnInit {
     }
 
     getPurchaseReportData() {
-        this.purchaseReportData = this.skuService.sample();
-        console.log("Purchase Report Data: ", this.purchaseReportData);
-        // this.skuService.sample().subscribe(
-        //     (res: HttpResponse<Sku[]>) => {
-        //         console.log('lets check the res: ', res);
-        //         this.purchaseReportData =  res.body;
-        //         // this.purchaseReportObservableArray = res.body;
-        //         // console.log("Purchase Report Data: ", this.purchaseReportData);
-        //     }
-        // );
+      this.skuService.sample().subscribe(
+            (res) => {
+                console.log('lets check the res: ', res);
+                this.purchaseReportData =  res.body;
+            }
+        );
     }
 }
