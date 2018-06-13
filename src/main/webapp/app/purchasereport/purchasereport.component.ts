@@ -10,11 +10,10 @@ import { Observable } from 'rxjs/Observable';
   ]
 })
 export class PurchasereportComponent implements OnInit {
-    purchaseReportArray: Array<any> = [];
     purchaseReportData: Observable<any[]>;
 
     constructor(
-      private skuService: SkuService,
+      private skuService: SkuService
     ) {}
 
     ngOnInit() {
