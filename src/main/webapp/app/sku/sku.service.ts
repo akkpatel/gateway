@@ -39,7 +39,6 @@ export class SkuService {
     }
 
     sample(req?: any): Observable<HttpResponse<Sku[]>> {
-        console.log('we are in sample')
         return this.http.get<Sku[]>(`${this.resourceUrl}/sample`, { observe: 'response'})
             .map((res: HttpResponse<Sku[]>) => res);
     }

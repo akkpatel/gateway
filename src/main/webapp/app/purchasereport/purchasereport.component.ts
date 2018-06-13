@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { purchaseReportData } from '../purchaseReport';
 import { SkuService } from '../sku/sku.service';
 import { Sku } from '../sku/sku.model';
-import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
-
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'jhi-purchasereport',
@@ -13,15 +11,13 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
   ]
 })
 export class PurchasereportComponent implements OnInit {
-    purchaseReportArray:Array<any> = [];
+    purchaseReportArray: Array<any> = [];
     purchaseReportData = null;
     constructor(
       private skuService: SkuService,
     ) {}
 
     ngOnInit() {
-        //this.purchaseReportData = this.getPurchaseReportData();
-        //console.log("Purchase Report Array: ", this.purchaseReportData);
         this.getPurchaseReportData();
     }
 

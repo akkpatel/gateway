@@ -14,11 +14,10 @@ export class TiresTableService {
   }
 
   getTableHeaders(value: boolean): string[] {
-  	if(value)
-  	{
-		return ['Brand', 'Quantity', 'Current Sales', 'Previous Sales', '% Change'];
-  	}else{
-		return ['ID', 'Brand', 'Quantity', 'Current Sales', 'Previous Sales', '% Change'];  	
-  	}
+    if ( value ) {
+      return [ 'Brand' , 'Quantity' , 'Current Sales' , 'Previous Sales' , '% Change' ];
+    } else {
+      return [ 'ID', 'Brand', 'Quantity', 'Current Sales', 'Previous Sales', '% Change' ];
+    }
   }
 }

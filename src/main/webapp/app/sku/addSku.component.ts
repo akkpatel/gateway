@@ -5,9 +5,8 @@ import { SkuService } from '../sku/sku.service';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { JhiEventManager } from 'ng-jhipster';
 
-
 @Component({
-  selector: 'add-sku',
+  selector: 'jhi-add-sku',
   templateUrl: './addSku.component.html',
   styles: [
   ]

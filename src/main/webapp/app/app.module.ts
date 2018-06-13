@@ -33,7 +33,6 @@ import { ImgComponent } from './components/atoms/img/img.component';
 import { MainNavbarComponent } from './components/organisms/navbar/navbar.component';
 import { PurchasereportModule } from './purchasereport/purchasereport.module';
 
-
 @NgModule({
     imports: [
         BrowserModule,

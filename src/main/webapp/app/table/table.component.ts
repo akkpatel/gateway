@@ -23,11 +23,10 @@ export class TableComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(this.tableData)
-    {
+    if (this.tableData) {
       this.value = true;
-    }else{
-      this.value = false
+    } else {
+      this.value = false;
     }
     this.columnHeaders = this.tiresTableService.getTableHeaders(this.value);
   }
