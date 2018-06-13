@@ -13,6 +13,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class PurchasereportComponent implements OnInit {
     purchaseReportData: Observable<any[]>;
+    testHelloWorldValue: string = "Hello World";
 
     constructor(
       private skuService: SkuService
@@ -29,5 +30,9 @@ export class PurchasereportComponent implements OnInit {
                 this.purchaseReportData =  res.body;
             }
         );
+    }
+
+    testHelloWorld() {
+        this.testHelloWorldValue = "Hello New World";
     }
 }

@@ -1,6 +1,6 @@
 import { TestBed, async, inject, fakeAsync, tick } from '@angular/core/testing';
 
-import { PurchasereportComponent } from './purchasereport.component';
+import { PurchasereportComponent } from '../../../../../main/webapp/app/purchasereport/purchasereport.component';
 
 describe('PurchaseReportComponent', () => {
     beforeEach(async() => {
